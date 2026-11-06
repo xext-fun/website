@@ -1,4 +1,6 @@
+# Add this site block to the host's shared Caddyfile; other domains remain separate.
 xext.fun {
+	# The Docker image copies the four public site files into this directory.
 	root * /srv/xext
 	encode zstd gzip
 	file_server
