@@ -5,3 +5,27 @@
 @media(max-width:760px){.wrap{width:min(100% - 36px,600px)}.site-header{height:70px}.wordmark{font-size:32px}.menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;background:none;border:0;width:44px;height:44px;cursor:pointer}.menu-toggle span{height:2px;width:25px;background:var(--ink);display:block;transition:transform .2s}.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}.site-nav{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);padding:20px 18px 28px;box-shadow:0 18px 25px rgba(0,0,0,.15);flex-direction:column;align-items:stretch;gap:0}.site-nav.is-open{display:flex}.site-nav a{padding:15px 8px;border-bottom:1px solid var(--line)}.site-nav .nav-github{margin-top:16px;justify-content:space-between;padding:13px 16px}.hero-grid{display:block;min-height:auto}.hero-copy{padding:70px 0 20px}.eyebrow{font-size:10px;margin-bottom:32px}h1{font-size:clamp(68px,15vw,112px);margin-bottom:32px}.hero-intro{font-size:16px}.hero-actions{gap:22px}.hero-art{height:360px;transform:scale(.69);transform-origin:top center;width:145%;margin-left:-22.5%}.art-label-top{top:0}.art-label-bottom{bottom:0}.hero-ticker{height:42px}.section-pad{padding-block:82px}.intro-grid{display:block}.intro-grid>.section-index{margin-bottom:32px}.intro-section h2,.areas-section h2,.join-section h2{font-size:clamp(48px,11vw,74px);margin-bottom:35px}.intro-bottom{grid-template-columns:1fr;gap:0}.intro-bottom p{font-size:17px}.section-heading-row{display:block}.section-aside{margin:22px 0 0}.areas-grid{grid-template-columns:1fr}.area-card,.area-card:nth-child(2){min-height:330px;border-right:0;border-bottom:1px solid var(--ink)}.area-card:last-child{border-bottom:0}.area-card h3{font-size:36px}.statement-inner{padding-block:85px}.statement-inner h2{font-size:clamp(76px,14vw,118px);margin:45px 0}.statement-inner>p:last-of-type{font-size:17px}.statement-scribble{display:none}.join-grid{grid-template-columns:1fr;gap:70px}.join-section h2{margin:35px 0 25px}.join-lead{font-size:17px}.footer-main{padding:65px 0 70px;align-items:start;gap:40px;flex-direction:column}.footer-wordmark{font-size:62px}.footer-bottom{flex-wrap:wrap}.footer-bottom span:nth-child(2){display:none}}
 @media(max-width:390px){h1{font-size:65px}.hero-actions{align-items:flex-start;flex-direction:column}.button{width:100%}.hero-art{margin-top:20px}.statement-inner h2{font-size:73px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker-track{animation:none}.button{transition:none}}
+
+/* Drawn icons replace font glyphs so they stay crisp on every device. */
+.icon-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.github-icon{display:block;width:20px;height:20px;flex:none}
+.nav-github{width:46px;height:46px;padding:0;display:grid;place-items:center;gap:0}
+.button-label{display:inline-flex;align-items:center;gap:11px;white-space:nowrap}
+.footer-github{display:grid;place-items:center;width:54px;height:54px;border:1px solid rgba(255,255,255,.5);border-radius:50%;transition:background .2s,color .2s}
+.footer-github .github-icon{width:26px;height:26px}
+.footer-github:hover{background:var(--lime);color:var(--ink);text-decoration:none!important}
+.card-icon{width:68px;height:68px;display:grid;place-items:center;border:1px solid currentColor;border-radius:21px;transition:transform .3s ease}
+.card-icon svg{width:38px;height:38px}
+.area-card:hover .card-icon{transform:rotate(-10deg) scale(1.05)}
+
+/* The spoken headline stays stable while the visible word changes. */
+.hero-word{display:inline-block;color:var(--lime);font-size:.72em;line-height:1.12;white-space:nowrap;transition:opacity .22s ease,transform .22s ease}
+.hero-word.is-exiting{opacity:0;transform:translateY(-.2em)}
+.hero-word.is-entering{animation:word-in .36s ease-out both}
+@keyframes word-in{from{opacity:0;transform:translateY(.2em)}to{opacity:1;transform:translateY(0)}}
+@keyframes float-spark{50%{transform:translateY(-12px) rotate(12deg)}}
+.spark-one{animation:float-spark 4s ease-in-out infinite}
+.spark-two{animation:float-spark 3.2s ease-in-out infinite reverse}
+
+@media(max-width:760px){.site-nav .nav-github{width:100%;height:48px;display:flex;align-items:center;justify-content:center;padding:0}.button-label{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.hero-word,.footer-github,.card-icon{transition:none}.spark-one,.spark-two,.hero-word.is-entering{animation:none}.area-card:hover .card-icon{transform:none}}
