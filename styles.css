@@ -29,3 +29,12 @@
 
 @media(max-width:760px){.site-nav .nav-github{width:100%;height:48px;display:flex;align-items:center;justify-content:center;padding:0}.button-label{white-space:normal}}
 @media(prefers-reduced-motion:reduce){.hero-word,.footer-github,.card-icon{transition:none}.spark-one,.spark-two,.hero-word.is-entering{animation:none}.area-card:hover .card-icon{transform:none}}
+
+/* Use the supplied xext mark in place of the earlier text wordmark. */
+.wordmark{display:inline-flex;align-items:center;flex:none;letter-spacing:normal}
+.wordmark img{display:block;width:142px;height:auto}
+.art-core{background:#fff;border-color:#fff}
+.art-core img{display:block;width:90%;height:auto}
+.footer-wordmark{padding:9px 15px 7px;border-radius:10px;background:#fff}
+.footer-wordmark img{width:230px}
+@media(max-width:760px){.wordmark img{width:120px}.footer-wordmark img{width:190px}}
